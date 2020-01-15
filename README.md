@@ -1,2 +1,3 @@
-# MondoReacto
-Complete microservice system using reactive components throughout
+# Spring Controller
+
+Simple spring controller to try things out on
