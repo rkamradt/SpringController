@@ -18,18 +18,9 @@
 *.zip
 *.tar.gz
 *.rar
+*.tgz
+*.lock
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/IncomingContract/target/
-/IncomingService/target/
-/incoming-service-test/target/
-/incoming-contract/target/
-/incoming-service/target/
-/queue-puller/target/
-/incoming-queue/target/
-/incoming-datamodel/target/
-/incoming-persist/target/
-/incoming-persist-test/target/
-/incoming-read-service/target/
 /target/
