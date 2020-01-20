@@ -37,26 +37,26 @@ import reactor.core.publisher.Mono;
 @Slf4j
 @Component
 public class SpringServiceImpl {
-    private final ReactiveMongoTemplate mongo;
+    private final ReactiveMongoTemplate mondoBaseTemplate;
 
-    public SpringServiceImpl(final ReactiveMongoTemplate mongo) {
-        this.mongo = mongo;
+    public SpringServiceImpl(final ReactiveMongoTemplate mondoBaseTemplate) {
+        this.mondoBaseTemplate = mondoBaseTemplate;
     }
     
     public Mono<Input> save(final Mono<Input> input) throws IncomingException {
-        return mongo.save(input
+        return mondoBaseTemplate.save(input
                 .map(i -> mapToData(i)))
             .map(m -> mapToInput(m));
     }
 
     public Flux<Input> alloutput() throws IncomingException {
-        return mongo
+        return mondoBaseTemplate
                 .findAll(MongoData.class)
                 .map(m -> mapToInput(m));
     }
 
     public Mono<Input> output(final String key) throws IncomingException {
-        return mongo
+        return mondoBaseTemplate
                 .findById(key, MongoData.class)
                 .map(m -> mapToInput(m));
     }
